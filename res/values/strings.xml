@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ACM Android App - Home</string>
+    <string name="app_name_events_calendar">ACM Android App - Events Calendar</string>
+    <string name="app_name_roster">ACM Android App - Roster</string>
+    <string name="app_name_store">ACM Android App - Store</string>
+    <string name="app_name_admin">ACM Android App - Administration</string>
+    <string name="app_name_admin_users">ACM Android App - Administration - Users</string>
+    <string name="app_name_admin_events">ACM Android App - Administration - Events</string>
+    <string name="app_name_admin_products">ACM Android App - Administration - Products</string>
+    <string name="app_name_admin_orders">ACM Android App - Administration - Orders</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    <Button android:text="Events" android:layout_height="wrap_content" android:id="@+id/event_button" android:layout_width="match_parent"></Button>
+    <Button android:text="Users" android:layout_height="wrap_content" android:id="@+id/users_button" android:layout_width="match_parent"></Button>
+    <Button android:text="Products" android:layout_height="wrap_content" android:id="@+id/products_button" android:layout_width="match_parent"></Button>
+    <Button android:text="Orders" android:layout_height="wrap_content" android:id="@+id/orders_button" android:layout_width="match_parent"></Button>
+    
+</LinearLayout>
