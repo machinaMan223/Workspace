@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
-</LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<ViewFlipper android:id="@+id/flipper"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:flipInterval="2000" android:layout_marginBottom="20dip">
+		<TextView android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:gravity="center_horizontal"
+			android:textSize="26sp" android:text="@string/animation_text_1" />
+		<TextView android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:gravity="center_horizontal"
+			android:textSize="26sp" android:text="@string/animation_text_2" />
+	</ViewFlipper>
+
+
+	<Button android:id="@+id/catalogbutton" android:text="Catalog"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:enabled="true"
+		android:layout_below="@id/flipper" />
+
+	<Button android:id="@+id/ordersbutton" android:text="Orders"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:enabled="false" 
+		android:layout_below="@id/catalogbutton" />
+
+	<Button android:id="@+id/usersbutton" android:text="Users"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:enabled="false" 
+		android:layout_below="@id/ordersbutton" />
+		
+	<RadioGroup android:id="@+id/mode"
+		android:layout_height="wrap_content" android:orientation="horizontal" 
+		android:layout_width="fill_parent"
+		android:layout_alignParentBottom="true" >
+
+		<RadioButton android:id="@+id/synch"
+			android:checked="false"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/auto_synch" />
+
+		<RadioButton android:id="@+id/local"
+			android:checked="true"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/local_only" />
+	</RadioGroup>
+
+</RelativeLayout>

@@ -6,7 +6,34 @@
     <uses-sdk android:minSdkVersion="10" />
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
+		<activity android:name=".EntrancePage" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
 
+		<activity android:name=".ShowSettings" android:label="@string/app_name">
+		</activity>
+
+		<activity android:name=".Catalog" android:label="@string/catalog">
+			<intent-filter>
+				<action android:name="com.depot.cs4900.CATALOG_LIST" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".CatalogByTitle" android:label="@string/catalog_by_title">
+		</activity>
+
+		<activity android:name=".CatalogByPrice" android:label="@string/catalog_by_price">
+		</activity>
+
+		<activity android:name=".CatalogByPopularity" android:label="@string/catalog_by_popularity">
+		</activity>
 
     </application>
+    
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>
