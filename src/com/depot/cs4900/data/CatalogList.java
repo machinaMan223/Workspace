@@ -14,6 +14,9 @@ import org.xml.sax.XMLReader;
 import android.content.Context;
 import android.util.Log;
 
+import com.depot.cs4900.CatalogAdapter;
+import com.depot.cs4900.Constants;
+
 public class CatalogList {
 
     private Context _context = null;
@@ -60,9 +63,10 @@ public class CatalogList {
         }
     }
 
+    // Write to the XML file
     public void persist() {
         try {
-            FileOutputStream fos = this._context.openFileOutput("catalog.xml", Context.MODE_PRIVATE);
+            FileOutputStream fos = this._context.openFileOutput(Constants.CATALOG_XML_FILE_NAME, Context.MODE_PRIVATE);
             fos.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n".getBytes());
             fos.write("<products>\n".getBytes());            
             for (int i = 0; i < getCatalogEntryCount(); i++) {
@@ -73,13 +77,14 @@ public class CatalogList {
             fos.flush();
             fos.close();
         } catch (Exception e) {
-            Log.d("Depot", "Failed to write out file?" + e.getMessage());
+            Log.d(Constants.LOGTAG, "Failed to write out file?" + e.getMessage());
         }
     }
 
+    // Read from the XML file
     public static CatalogList parse(Context context) {
         try {
-            FileInputStream fis = context.openFileInput("catalog.xml");
+            FileInputStream fis = context.openFileInput(Constants.CATALOG_XML_FILE_NAME);
 
             if (fis == null) {
                 return null;
@@ -114,7 +119,7 @@ public class CatalogList {
             // return our new cataloglist
             return clHandler.getList();
         } catch (Exception e) {
-            Log.d("Depot", "Error parsing catalog list xml file: " + e.getMessage());
+            Log.d(Constants.LOGTAG, "Error parsing catalog list xml file: " + e.getMessage());
             return null;
         }
     }
