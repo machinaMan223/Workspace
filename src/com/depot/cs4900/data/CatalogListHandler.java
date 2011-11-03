@@ -4,6 +4,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import com.depot.cs4900.CatalogByTitle;
 import com.depot.cs4900.Constants;
 
 import android.content.Context;
@@ -12,7 +13,7 @@ import android.os.Message;
 import android.util.Log;
 
 public class CatalogListHandler extends DefaultHandler {
-
+	private static final String CLASSTAG = CatalogListHandler.class.getSimpleName();
     Handler phandler = null;
     CatalogList _list;
     CatalogEntry _product;
@@ -88,7 +89,7 @@ public class CatalogListHandler extends DefaultHandler {
 
             }
         } catch (Exception ee) {
-            Log.d("Depot:startElement", ee.getStackTrace().toString());
+            Log.d(Constants.LOGTAG, " " + CatalogListHandler.CLASSTAG + ee.getStackTrace().toString());
         }
     }
 
@@ -134,7 +135,7 @@ public class CatalogListHandler extends DefaultHandler {
     @Override
     public void characters(char ch[], int start, int length) {
         String theString = new String(ch, start, length);
-       // Log.d("Depot", "characters[" + theString + "]");
+       // Log.d(Constants.LOGTAG, " " + CatalogListHandler.CLASSTAG + "characters[" + theString + "]");
         this.sb.append(theString);
     }
 }

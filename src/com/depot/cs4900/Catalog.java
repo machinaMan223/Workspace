@@ -27,7 +27,6 @@ import com.depot.cs4900.data.CatalogListHandler;
 
 
 public class Catalog extends TabActivity{
-	final String tag = "Depot on Rails : Catalog";
     private static final String CLASSTAG = Catalog.class.getSimpleName();
     Prefs myprefs = null;
 

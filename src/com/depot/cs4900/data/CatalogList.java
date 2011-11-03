@@ -15,10 +15,12 @@ import android.content.Context;
 import android.util.Log;
 
 import com.depot.cs4900.CatalogAdapter;
+import com.depot.cs4900.CatalogByTitle;
 import com.depot.cs4900.Constants;
+import com.depot.cs4900.EntrancePage;
 
 public class CatalogList {
-
+	private static final String CLASSTAG = CatalogList.class.getSimpleName();
     private Context _context = null;
     private List<CatalogEntry> _cataloglist;
 
@@ -50,7 +52,7 @@ public class CatalogList {
             for (int i = 0; i < getCatalogEntryCount(); i++) {
             	CatalogEntry ce = getCatalogEntry(i);
                 if (ce.get_product_id().equals(newCatalogEntry.get_product_id())) {
-                    Log.d("Depot", "Replacing CatalogEntry");
+                    Log.d(Constants.LOGTAG, " " + CatalogList.CLASSTAG + "Replacing CatalogEntry");
                     newlist.addCatalogEntry(newCatalogEntry);
                 } else {
                     newlist.addCatalogEntry(ce);
@@ -77,7 +79,7 @@ public class CatalogList {
             fos.flush();
             fos.close();
         } catch (Exception e) {
-            Log.d(Constants.LOGTAG, "Failed to write out file?" + e.getMessage());
+            Log.d(Constants.LOGTAG, " " + CatalogList.CLASSTAG + "Failed to write out file?" + e.getMessage());
         }
     }
 
@@ -119,7 +121,7 @@ public class CatalogList {
             // return our new cataloglist
             return clHandler.getList();
         } catch (Exception e) {
-            Log.d(Constants.LOGTAG, "Error parsing catalog list xml file: " + e.getMessage());
+            Log.d(Constants.LOGTAG, " " + CatalogList.CLASSTAG + "Error parsing catalog list xml file: " + e.getMessage());
             return null;
         }
     }
