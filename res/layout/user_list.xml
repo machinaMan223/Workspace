@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:gravity="center_horizontal" android:padding="10px"
+	>
+
+	<TextView android:id="@+id/intro_blurb_users"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_marginLeft="10px"
+		android:layout_marginBottom="15px" style="@style/intro_blurb"
+		android:text="@string/intro_blurb_users" />
+	
+	<Spinner android:id="@+id/name"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/intro_blurb_users"
+		android:layout_marginLeft="10px" android:layout_marginBottom="20px" />
+
+	<TextView android:id="@+id/address_label"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/name"
+		android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+		style="@style/label" android:text="@string/address_entry_label" />
+	<EditText android:id="@+id/address"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/address_label"
+		android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+		style="@style/edit_text" />	
+
+</RelativeLayout>

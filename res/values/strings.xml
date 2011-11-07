@@ -5,6 +5,10 @@
 
 	<string name="animation_text_1">Stay Hungry. Stay Foolish.</string>
 	<string name="animation_text_2">— Steve Jobs</string>
+
+	<string name="intro_blurb_users">Users</string>
+
+	<string name="address_entry_label">Address</string>
 	
 	<string name="auto_synch">Automatic Synch</string>
 	<string name="local_only">Local Only</string>
