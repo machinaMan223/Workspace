@@ -27,7 +27,7 @@
 
 	<Button android:id="@+id/usersbutton" android:text="Users"
 		android:layout_height="wrap_content" android:layout_width="fill_parent"
-		android:enabled="false" 
+		android:enabled="true" 
 		android:layout_below="@id/ordersbutton" />
 		
 	<RadioGroup android:id="@+id/mode"
