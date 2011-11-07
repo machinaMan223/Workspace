@@ -85,7 +85,9 @@ public class EntrancePage extends Activity {
 
 			public void onClick(View v) {
 				try {
-
+					Intent intent = new Intent(
+							Constants.INTENT_ACTION_USER_LIST);
+					startActivity(intent);
 				} catch (Exception e) {
 					Log.i(Constants.LOGTAG + ": " +EntrancePage.CLASSTAG,
 							"Failed to load users" + e.getMessage() + "]");
