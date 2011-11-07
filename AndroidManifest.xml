@@ -22,6 +22,13 @@
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 		</activity>
+		
+		<activity android:name=".User" android:label="@string/user">
+			<intent-filter>
+				<action android:name="com.depot.cs4900.USER_LIST" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
 
 		<activity android:name=".CatalogByTitle" android:label="@string/catalog_by_title">
 		</activity>
