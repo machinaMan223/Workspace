@@ -8,6 +8,7 @@ public class UserEntry {
     private String _user_id = "";
     private String _name = "";
     private String _password = "";
+    private String _address = "";
 
     UserEntry() {
         // constructor
@@ -38,6 +39,14 @@ public class UserEntry {
         this._password = _password;
     }
     
+    public String get_address() {
+        return this._address;
+    }
+
+    public void set_address(String _address) {
+        this._address = _address;
+    }
+    
     @Override
     public String toString() {
         return this._name;
@@ -49,6 +58,7 @@ public class UserEntry {
         sb.append("<id>" + this._user_id + "</id>");
         sb.append("<name>" + this._name + "</name>");
         sb.append("<hashed-password>" + this._password + "</hashed-password>");
+        sb.append("<address>" + this._address + "</address>");
         sb.append("</user>");
         return sb.toString() + "\n";
     }
@@ -58,6 +68,7 @@ public class UserEntry {
         b.putString("user_id", this._user_id);
         b.putString("name", this._name);
         b.putString("hashed-password", this._password);
+        b.putString("address", this._address);
 
         return b;
     }
@@ -67,6 +78,7 @@ public class UserEntry {
         ce.set_user_id(b.getString("user_id"));
         ce.set_name(b.getString("name"));
         ce.set_password(b.getString("hashed-password"));
+        ce.set_address(b.getString("address"));
 
         return ce;
     }

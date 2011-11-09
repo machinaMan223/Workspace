@@ -120,6 +120,10 @@ public class UserListHandler extends DefaultHandler {
             this._user.set_password(this.sb.toString());
             return;
         }
+        if (localName.equals("address")) {
+            this._user.set_address(this.sb.toString());
+            return;
+        }
 
     }
 

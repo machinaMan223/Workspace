@@ -49,10 +49,11 @@ public class User extends Activity {
         user.toArray();
         
         ArrayAdapter<UserEntry> namesList = new ArrayAdapter<UserEntry>(this, android.R.layout.simple_spinner_item, user);
-            namesList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            this.name.setAdapter(namesList);
-
-        this.empty = (TextView) findViewById(R.id.empty);
+        namesList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        this.name.setAdapter(namesList);
+        
+        String address = ((UserEntry) name.getSelectedItem()).get_address();
+    	this.address.setText(address);
     }   
 
     @Override
@@ -92,8 +93,10 @@ public class User extends Activity {
 //        return super.onMenuItemSelected(featureId, item);
 //    }  
     
-    protected String onItemSelectedListener(View view, int position, long id){
-    	return name.getSelectedItem().toString();
+    protected void onItemSelectedListener(View view, int position, long id){
+    	String address = ((UserEntry) name.getSelectedItem()).get_address();
+    	this.address.setText(address);
+    	
     }
 
 }
