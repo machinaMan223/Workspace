@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.widget.AdapterView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.depot.cs4900.data.*;
 
@@ -88,6 +90,10 @@ public class User extends Activity {
 //                return true;
 //        }
 //        return super.onMenuItemSelected(featureId, item);
-//    }   
+//    }  
+    
+    protected String onItemSelectedListener(View view, int position, long id){
+    	return name.getSelectedItem().toString();
+    }
 
 }
