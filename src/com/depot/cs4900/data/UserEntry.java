@@ -48,7 +48,7 @@ public class UserEntry {
         sb.append("<user>");
         sb.append("<id>" + this._user_id + "</id>");
         sb.append("<name>" + this._name + "</name>");
-        sb.append("<password>" + this._password + "</password>");
+        sb.append("<hashed-password>" + this._password + "</hashed-password>");
         sb.append("</user>");
         return sb.toString() + "\n";
     }
@@ -57,7 +57,7 @@ public class UserEntry {
         Bundle b = new Bundle();
         b.putString("user_id", this._user_id);
         b.putString("name", this._name);
-        b.putString("password", this._password);
+        b.putString("hashed-password", this._password);
 
         return b;
     }
@@ -66,7 +66,7 @@ public class UserEntry {
         UserEntry ce = new UserEntry();
         ce.set_user_id(b.getString("user_id"));
         ce.set_name(b.getString("name"));
-        ce.set_password(b.getString("password"));
+        ce.set_password(b.getString("hashed-password"));
 
         return ce;
     }

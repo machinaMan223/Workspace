@@ -100,7 +100,7 @@ public class UserListHandler extends DefaultHandler {
             this._list.addUserEntry(this._user);
             Message msg = new Message();
             msg.what = 0;
-            msg.obj = ("Storing Product # " + this._user.get_user_id());
+            msg.obj = ("Storing User # " + this._user.get_user_id());
             if (this.uhandler != null) {
                 this.uhandler.sendMessage(msg);
             }
@@ -116,7 +116,7 @@ public class UserListHandler extends DefaultHandler {
             this._user.set_name(this.sb.toString());
             return;
         }
-        if (localName.equals("password")) {
+        if (localName.equals("hashed-password")) {
             this._user.set_password(this.sb.toString());
             return;
         }
