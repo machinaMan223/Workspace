@@ -3,7 +3,7 @@ package com.depot.cs4900;
 
 import java.util.List;
 
-import android.app.ListActivity;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 import com.depot.cs4900.data.*;
 
-public class User extends ListActivity {
+public class User extends Activity {
     private static final String CLASSTAG = User.class.getSimpleName();
 //    private static final int MENU_CHANGE_CRITERIA = Menu.FIRST + 1;
 //    private static final int MENU_GET_NEXT_PAGE = Menu.FIRST;
@@ -32,7 +32,6 @@ public class User extends ListActivity {
     private Spinner name;
     private EditText address;
     private List<UserEntry> user;
-    private List<String> names;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,17 +43,14 @@ public class User extends ListActivity {
         this.address = (EditText) findViewById(R.id.address);
         this.name = (Spinner) findViewById(R.id.name);
         
-        ArrayAdapter<String> namesList = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names);
+        user = UserList.parse(this).getAllUserEntries();
+        user.toArray();
+        
+        ArrayAdapter<UserEntry> namesList = new ArrayAdapter<UserEntry>(this, android.R.layout.simple_spinner_item, user);
             namesList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             this.name.setAdapter(namesList);
 
         this.empty = (TextView) findViewById(R.id.empty);
-
-        // set list properties
-        final ListView listView = getListView();
-        listView.setItemsCanFocus(false);
-        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        listView.setEmptyView(this.empty);
     }   
 
     @Override
@@ -63,10 +59,6 @@ public class User extends ListActivity {
         Log.v(Constants.LOGTAG, " " + User.CLASSTAG + " onResume");
 
         // Parse the data from user.xml file
-        user = UserList.parse(this).getAllUserEntries();
-        for(int i = 0; i < user.size(); i++){
-        	names.add(user.get(i).toString());
-        }
     }    
 //   
 //    @Override
@@ -96,18 +88,6 @@ public class User extends ListActivity {
 //                return true;
 //        }
 //        return super.onMenuItemSelected(featureId, item);
-//    }
-    
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-//        // set the current review to the Application (global state placed there)
-//        RestaurantFinderApplication application = (RestaurantFinderApplication) getApplication();
-//        application.setCurrentReview(this.reviews.get(position));
-//
-//        // startFrom page is not stored in application, for example purposes it's a simple "extra"
-//        Intent intent = new Intent(Constants.INTENT_ACTION_VIEW_DETAIL);
-//        intent.putExtra(Constants.STARTFROM_EXTRA, getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 1));
-//        startActivity(intent);
-    }    
+//    }   
 
 }
