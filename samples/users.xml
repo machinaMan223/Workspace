@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users type="array">
+  <user>
+    <address>1500 N Patterson St, Valdosta, GA 31698</address>
+    <admin type="boolean">true</admin>
+    <classification>Senior</classification>
+    <created-at type="datetime">2011-11-03T14:57:58Z</created-at>
+    <email nil="true"></email>
+    <emailAddress>blank@blank.com</emailAddress>
+    <fullName>Administrator</fullName>
+    <gmaps type="boolean">true</gmaps>
+    <hashed-password>2725a4251bb99539d29ae60a7b666a6531740d2f05fd6c711332f793fb452690</hashed-password>
+    <id type="integer">1</id>
+    <latitude type="float" nil="true"></latitude>
+    <longitude type="float" nil="true"></longitude>
+    <name>admin</name>
+    <paid type="boolean">true</paid>
+    <phone nil="true"></phone>
+    <salt>263069800.37169924664518583</salt>
+    <updated-at type="datetime">2011-11-03T15:00:28Z</updated-at>
+  </user>
+  <user>
+    <address>1500 N Patterson St, Valdosta, GA 31698</address>
+    <admin type="boolean" nil="true"></admin>
+    <classification>Senior</classification>
+    <created-at type="datetime">2011-11-09T15:12:30Z</created-at>
+    <email nil="true"></email>
+    <emailAddress>domo@valdosta.edu</emailAddress>
+    <fullName>Dominique Hazzard</fullName>
+    <gmaps type="boolean" nil="true"></gmaps>
+    <hashed-password>8850c3cad76442621c0b6ae30903ea0e9cd8f032d1876f4014c864dcfa175747</hashed-password>
+    <id type="integer">3</id>
+    <latitude type="float" nil="true"></latitude>
+    <longitude type="float" nil="true"></longitude>
+    <name>domo</name>
+    <paid type="boolean">true</paid>
+    <phone nil="true"></phone>
+    <salt>263755600.7904135562876334</salt>
+    <updated-at type="datetime">2011-11-09T15:15:43Z</updated-at>
+  </user>
+  <user>
+    <address>4321 Def Rd, Valdosta, GA 31602</address>
+    <admin type="boolean" nil="true"></admin>
+    <classification>Senior</classification>
+    <created-at type="datetime">2011-11-09T15:14:08Z</created-at>
+    <email nil="true"></email>
+    <emailAddress>j@y.com</emailAddress>
+    <fullName>Jem Young</fullName>
+    <gmaps type="boolean" nil="true"></gmaps>
+    <hashed-password>a77a5f56c106733c716f3bbc7817e9a72a30b69d10b91d0d218f63abfb16d8f2</hashed-password>
+    <id type="integer">5</id>
+    <latitude type="float" nil="true"></latitude>
+    <longitude type="float" nil="true"></longitude>
+    <name>jzyoung</name>
+    <paid type="boolean">true</paid>
+    <phone nil="true"></phone>
+    <salt>249425800.5291790358150443</salt>
+    <updated-at type="datetime">2011-11-09T15:17:28Z</updated-at>
+  </user>
+  <user>
+    <address>1639 E Park Ave Apt F6, Valdosta, GA 31602</address>
+    <admin type="boolean">true</admin>
+    <classification>Senior</classification>
+    <created-at type="datetime">2011-11-03T15:01:47Z</created-at>
+    <email nil="true"></email>
+    <emailAddress>kjtillma@valdosta.edu</emailAddress>
+    <fullName>Kai Tillman</fullName>
+    <gmaps type="boolean">true</gmaps>
+    <hashed-password>f917b4382eb3c710e7f27155b3680bf3efc11c80b095a05c22477a7d55ffca94</hashed-password>
+    <id type="integer">2</id>
+    <latitude type="float" nil="true"></latitude>
+    <longitude type="float" nil="true"></longitude>
+    <name>ktillman</name>
+    <paid type="boolean">true</paid>
+    <phone nil="true"></phone>
+    <salt>257074400.23545551186091407</salt>
+    <updated-at type="datetime">2011-11-09T15:16:43Z</updated-at>
+  </user>
+  <user>
+    <address>123 Abc Rd, Valdosta, GA 31602</address>
+    <admin type="boolean" nil="true"></admin>
+    <classification>Senior</classification>
+    <created-at type="datetime">2011-11-09T15:13:06Z</created-at>
+    <email nil="true"></email>
+    <emailAddress>r@j.com</emailAddress>
+    <fullName>Rob Jenkins</fullName>
+    <gmaps type="boolean" nil="true"></gmaps>
+    <hashed-password>be83b46e639f4bf084856a6dd9089d0357d9ef7a3601eab110bc8e11439809e2</hashed-password>
+    <id type="integer">4</id>
+    <latitude type="float" nil="true"></latitude>
+    <longitude type="float" nil="true"></longitude>
+    <name>rpjenkins</name>
+    <paid type="boolean" nil="true"></paid>
+    <phone nil="true"></phone>
+    <salt>259729800.5811115765504611</salt>
+    <updated-at type="datetime">2011-11-09T15:13:06Z</updated-at>
+  </user>
+</users>

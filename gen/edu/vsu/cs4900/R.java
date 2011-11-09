@@ -15,12 +15,12 @@ public final class R {
     }
     public static final class id {
         public static final int admin_button=0x7f050007;
+        public static final int catalog_button=0x7f050006;
         public static final int event_button=0x7f050000;
         public static final int events_calendar_button=0x7f050004;
         public static final int orders_button=0x7f050003;
         public static final int products_button=0x7f050002;
         public static final int roster_button=0x7f050005;
-        public static final int store_button=0x7f050006;
         public static final int users_button=0x7f050001;
     }
     public static final class layout {
@@ -41,8 +41,8 @@ public final class R {
         public static final int app_name_admin_orders=0x7f040008;
         public static final int app_name_admin_products=0x7f040007;
         public static final int app_name_admin_users=0x7f040005;
+        public static final int app_name_catalog=0x7f040003;
         public static final int app_name_events_calendar=0x7f040001;
         public static final int app_name_roster=0x7f040002;
-        public static final int app_name_store=0x7f040003;
     }
 }

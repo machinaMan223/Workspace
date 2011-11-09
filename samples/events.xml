@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events type="array">
+  <event>
+    <address>1500 N Patterson St, Valdosta, GA 31698</address>
+    <created-at type="datetime">2011-11-03T15:04:35Z</created-at>
+    <description>&lt;p&gt;Last meeting of the year.  Officer elections. FREE PIZZA!&lt;/p&gt;</description>
+    <end-at type="datetime">2011-11-17T19:30:00Z</end-at>
+    <gmaps type="boolean">true</gmaps>
+    <icon>/images/acm.jpg</icon>
+    <id type="integer">4</id>
+    <latitude type="float">30.848558</latitude>
+    <location>Nevins Hall 2109</location>
+    <longitude type="float">-83.28778299999999</longitude>
+    <name>ACM General Meeting</name>
+    <price type="decimal">1.0</price>
+    <start-at type="datetime">2011-11-17T18:30:00Z</start-at>
+    <updated-at type="datetime">2011-11-03T15:04:35Z</updated-at>
+  </event>
+  <event>
+    <address>1500 N Patterson St, Valdosta, GA 31698</address>
+    <created-at type="datetime">2011-11-03T15:01:12Z</created-at>
+    <description>&lt;p&gt; Come blow off some steam. FREE TO PLAY! &lt;/p&gt;</description>
+    <end-at type="datetime">2011-11-04T20:00:00Z</end-at>
+    <gmaps type="boolean">true</gmaps>
+    <icon>/images/TF2.jpg</icon>
+    <id type="integer">3</id>
+    <latitude type="float">30.848558</latitude>
+    <location>Nevins Hall 2109</location>
+    <longitude type="float">-83.28778299999999</longitude>
+    <name>ACM Team Fortress 2 LAN Party II</name>
+    <price type="decimal">3.0</price>
+    <start-at type="datetime">2011-11-04T17:00:00Z</start-at>
+    <updated-at type="datetime">2011-11-03T15:01:12Z</updated-at>
+  </event>
+  <event>
+    <address>1500 N Patterson St, Valdosta, GA 31698</address>
+    <created-at type="datetime">2011-11-03T14:57:58Z</created-at>
+    <description>&lt;p&gt;
+        Come blow off some steam after midterms week. FREE TO PLAY!
+      &lt;/p&gt;</description>
+    <end-at type="datetime">2011-10-07T19:00:00Z</end-at>
+    <gmaps type="boolean">true</gmaps>
+    <icon>/images/TF2.jpg</icon>
+    <id type="integer">1</id>
+    <latitude type="float">30.848558</latitude>
+    <location>Nevins Hall 2109</location>
+    <longitude type="float">-83.28778299999999</longitude>
+    <name>Team Fortress 2 LAN Party</name>
+    <price type="decimal">3.0</price>
+    <start-at type="datetime">2011-10-07T17:00:00Z</start-at>
+    <updated-at type="datetime">2011-11-03T14:57:58Z</updated-at>
+  </event>
+  <event>
+    <address>112 Burton Ave.Valdosta, GA 31601</address>
+    <created-at type="datetime">2011-11-03T14:57:58Z</created-at>
+    <description>&lt;p&gt;
+        Meet and greet picnic in the park.
+      &lt;/p&gt;</description>
+    <end-at type="datetime">2011-09-16T17:00:00Z</end-at>
+    <gmaps type="boolean">true</gmaps>
+    <icon>/images/acm.jpg</icon>
+    <id type="integer">2</id>
+    <latitude type="float">30.8651908</latitude>
+    <location>McKey Park</location>
+    <longitude type="float">-83.2909352</longitude>
+    <name>ACM Welcome Picnic</name>
+    <price type="decimal">3.0</price>
+    <start-at type="datetime">2011-09-16T15:00:00Z</start-at>
+    <updated-at type="datetime">2011-11-03T14:57:58Z</updated-at>
+  </event>
+</events>

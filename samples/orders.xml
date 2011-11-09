@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders type="array">
+  <order>
+    <address>4321 Def Rd, Valdosta, GA 31602</address>
+    <created-at type="datetime">2011-11-09T15:17:29Z</created-at>
+    <email>j@y.com</email>
+    <id type="integer">3</id>
+    <name>Jem Young</name>
+    <pay-type>Credit card</pay-type>
+    <updated-at type="datetime">2011-11-09T15:17:29Z</updated-at>
+  </order>
+  <order>
+    <address>1639 E Park Ave Apt F6, Valdosta, GA</address>
+    <created-at type="datetime">2011-11-09T15:16:43Z</created-at>
+    <email>k@t.edu</email>
+    <id type="integer">2</id>
+    <name>Kai Tillman</name>
+    <pay-type>Check</pay-type>
+    <updated-at type="datetime">2011-11-09T15:16:43Z</updated-at>
+  </order>
+  <order>
+    <address>1500 N Patterson St, Valdosta, GA 31602</address>
+    <created-at type="datetime">2011-11-09T15:15:44Z</created-at>
+    <email>d@h.com</email>
+    <id type="integer">1</id>
+    <name>Dominique Hazzard</name>
+    <pay-type>Credit card</pay-type>
+    <updated-at type="datetime">2011-11-09T15:15:44Z</updated-at>
+  </order>
+</orders>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products type="array">
+  <product>
+    <created-at type="datetime">2011-11-03T14:57:57Z</created-at>
+    <description>&lt;p&gt;
+        This item allows you to pay your membership dues online.
+      &lt;/p&gt;</description>
+    <id type="integer">1</id>
+    <image-url>/images/acm.jpg</image-url>
+    <price type="decimal">20.0</price>
+    <title>VSU ACM Membership</title>
+    <updated-at type="datetime">2011-11-03T14:57:57Z</updated-at>
+  </product>
+</products>

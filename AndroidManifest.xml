@@ -28,7 +28,7 @@
         	</intent-filter>
         </activity>
         
-        <activity android:name="Store" android:label="@string/app_name_store">
+        <activity android:name=".Catalog" android:label="@string/app_name_catalog">
         	<intent-filter>
         		<action android:name="edu.vsu.cs4900.SHOW_STORE" />
         		<category android:name="android.intent.category.DEFAULT" />

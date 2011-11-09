@@ -3,7 +3,7 @@
     <string name="app_name">ACM Android App - Home</string>
     <string name="app_name_events_calendar">ACM Android App - Events Calendar</string>
     <string name="app_name_roster">ACM Android App - Roster</string>
-    <string name="app_name_store">ACM Android App - Store</string>
+    <string name="app_name_catalog">ACM Android App - Catalog</string>
     <string name="app_name_admin">ACM Android App - Administration</string>
     <string name="app_name_admin_users">ACM Android App - Administration - Users</string>
     <string name="app_name_admin_events">ACM Android App - Administration - Events</string>
