@@ -1,97 +1,113 @@
+
 package com.depot.cs4900;
 
-import java.io.FileOutputStream;
-import java.net.URL;
+import java.util.List;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import org.apache.http.client.ResponseHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
-
+import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.app.TabActivity;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.widget.TabHost;
-import android.content.Context;
-import android.content.Intent;
-import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
-import com.depot.cs4900.data.UserListHandler;
-// import com.depot.cs4900.network.HTTPRequestHelper;
+import com.depot.cs4900.data.*;
 
-
-public class User extends TabActivity{
+public class User extends ListActivity {
     private static final String CLASSTAG = User.class.getSimpleName();
-    Prefs myprefs = null;
-
-//    ProgressDialog myprogress;
-//    Handler progresshandler;
+//    private static final int MENU_CHANGE_CRITERIA = Menu.FIRST + 1;
+//    private static final int MENU_GET_NEXT_PAGE = Menu.FIRST;
+//    private static final int NUM_RESULTS_PER_PAGE = 8;
     
-    // use a handler to update the UI (send the handler messages from other threads)
-//    private final Handler progresshandler = new Handler() {
-
-//        @Override
-//        public void handleMessage(final Message msg) {
-//        	myprogress.dismiss();
-//        	if (msg.what == 2) 
-//        		return;
-//        	
-//            String bundleResult = msg.getData().getString("RESPONSE");
-//
-//            try {
-//            FileOutputStream fos = getApplication().getApplicationContext().openFileOutput("catalog.xml", Context.MODE_PRIVATE);
-//            fos.write(bundleResult.getBytes());
-//            fos.flush();
-//            fos.close();
-//            }catch(Exception e){
-//              Log.d("Depot", "Exception: " + e.getMessage());
-//              Message m = new Message();
-//              m.what = 2; // error occured
-//              m.obj = ("Caught an error retrieving catalog data: " + e.getMessage());
-//              User.this.progresshandler.sendMessage(m);
-//            }
-//            
-//            final TabHost tabHost = getTabHost();
-//
-//            tabHost.addTab(tabHost.newTabSpec("tab1")
-//                    .setIndicator("By Title")
-//                    .setContent(new Intent(User.this, UserByTitle.class)));
-//
-//            tabHost.addTab(tabHost.newTabSpec("tab2")
-//                    .setIndicator("By Price")
-//                    .setContent(new Intent(User.this, UserByPrice.class)));
-//
-//            tabHost.addTab(tabHost.newTabSpec("tab3")
-//                    .setIndicator("By Popularity")
-//                    .setContent(new Intent(User.this, UserByPopularity.class)));
-//        }
-//    };
+    private TextView empty;    
+    private ProgressDialog progressDialog;
+    private Spinner name;
+    private EditText address;
+    private List<UserEntry> user;
+    private List<String> names;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        this.myprefs = new Prefs(getApplicationContext());
-        
-//        this.myprogress = ProgressDialog.show(this, "Refreshing User", "Please Wait", true, false);
-//        
-//        final ResponseHandler<String> responseHandler = HTTPRequestHelper.getResponseHandlerInstance(this.progresshandler);
-//        
-//        // do the HTTP dance in a separate thread (the responseHandler will fire when complete)
-//        new Thread() {
-//
-//            @Override
-//            public void run() {
-//                HTTPRequestHelper helper = new HTTPRequestHelper(responseHandler);
-//                helper.performGet(User.this.myprefs.getServer() + "/products.xml", null, null, null);
-//            }
-//        }.start();
+        Log.v(Constants.LOGTAG, " " + User.CLASSTAG + " onCreate");
 
-    }
+        this.setContentView(R.layout.user_list);
+        
+        this.address = (EditText) findViewById(R.id.address);
+        this.name = (Spinner) findViewById(R.id.name);
+        
+        ArrayAdapter<String> namesList = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names);
+            namesList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            this.name.setAdapter(namesList);
+
+        this.empty = (TextView) findViewById(R.id.empty);
+
+        // set list properties
+        final ListView listView = getListView();
+        listView.setItemsCanFocus(false);
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        listView.setEmptyView(this.empty);
+    }   
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v(Constants.LOGTAG, " " + User.CLASSTAG + " onResume");
+
+        // Parse the data from user.xml file
+        user = UserList.parse(this).getAllUserEntries();
+        for(int i = 0; i < user.size(); i++){
+        	names.add(user.get(i).toString());
+        }
+    }    
+//   
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        super.onCreateOptionsMenu(menu);
+//        menu.add(0, ReviewList.MENU_GET_NEXT_PAGE, 0, R.string.menu_get_next_page).setIcon(
+//            android.R.drawable.ic_menu_more);
+//        menu.add(0, ReviewList.MENU_CHANGE_CRITERIA, 0, R.string.menu_change_criteria).setIcon(
+//            android.R.drawable.ic_menu_edit);
+//        return true;
+//    }    
+//
+//    @Override
+//    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+//        Intent intent = null;
+//        switch (item.getItemId()) {
+//            case MENU_GET_NEXT_PAGE:
+//                // increment the startFrom value and call this Activity again
+//                intent = new Intent(Constants.INTENT_ACTION_VIEW_LIST);
+//                intent.putExtra(Constants.STARTFROM_EXTRA, getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 1)
+//                    + ReviewList.NUM_RESULTS_PER_PAGE);
+//                startActivity(intent);
+//                return true;
+//            case MENU_CHANGE_CRITERIA:
+//                intent = new Intent(this, ReviewCriteria.class);
+//                startActivity(intent);
+//                return true;
+//        }
+//        return super.onMenuItemSelected(featureId, item);
+//    }
+    
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+//        // set the current review to the Application (global state placed there)
+//        RestaurantFinderApplication application = (RestaurantFinderApplication) getApplication();
+//        application.setCurrentReview(this.reviews.get(position));
+//
+//        // startFrom page is not stored in application, for example purposes it's a simple "extra"
+//        Intent intent = new Intent(Constants.INTENT_ACTION_VIEW_DETAIL);
+//        intent.putExtra(Constants.STARTFROM_EXTRA, getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 1));
+//        startActivity(intent);
+    }    
+
 }
