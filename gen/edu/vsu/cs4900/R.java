@@ -16,6 +16,7 @@ public final class R {
     public static final class id {
         public static final int admin_button=0x7f050007;
         public static final int catalog_button=0x7f050006;
+        public static final int empty=0x7f050008;
         public static final int event_button=0x7f050000;
         public static final int events_calendar_button=0x7f050004;
         public static final int orders_button=0x7f050003;
