@@ -14,6 +14,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -52,7 +54,16 @@ public class User extends Activity {
         namesList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.name.setAdapter(namesList);
         
-        String address = ((UserEntry) name.getSelectedItem()).get_address();
+        this.name.setOnItemClickListener(new OnItemClickListener(){
+
+        	@Override
+        	public void onItemClick(AdapterView<?> arg0,View v, int position,long id) {
+        		getSelectedText();
+        	}
+            
+        });
+        
+    	String address = user.get(name.getSelectedItemPosition()).get_address();
     	this.address.setText(address);
     }   
 
@@ -93,8 +104,8 @@ public class User extends Activity {
 //        return super.onMenuItemSelected(featureId, item);
 //    }  
     
-    protected void onItemSelectedListener(View view, int position, long id){
-    	String address = ((UserEntry) name.getSelectedItem()).get_address();
+    protected void getSelectedText(){
+    	String address = user.get(name.getSelectedItemPosition()).get_address();
     	this.address.setText(address);
     	
     }
