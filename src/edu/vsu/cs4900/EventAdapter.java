@@ -75,26 +75,23 @@ public class EventAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
-		return 0;
+        return this.event.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		// TODO Auto-generated method stub
-		return null;
+        return this.event.get(position);
 	}
 
 	@Override
 	public long getItemId(int position) {
-		// TODO Auto-generated method stub
-		return 0;
+        return position;
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
-		return null;
+		EventEntry re = this.event.get(position);
+        return new EventListView(this.context, re.get_name(), re.get_address(), re.get_start_at());
 	}
 	
 	private final class EventListView extends LinearLayout {
@@ -119,7 +116,7 @@ public class EventAdapter extends BaseAdapter {
             this.addView(this.name, params);
 
             this.address = new TextView(context);
-            this.address.setText("$ " + address);
+            this.address.setText(address);
             this.address.setTextSize(8f);
             this.address.setTextColor(Color.GRAY);
             this.addView(this.address, params);
