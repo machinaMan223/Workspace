@@ -19,4 +19,5 @@
 	<string name="product_cancel_button_label">Cancel</string>
 	<string name="product_new_button_label">New</string>
 	<string name="new_product">ACM Android App - New Product</string>
+	<string name="ec_desc">ACM Android App - Event Description</string>
 </resources>

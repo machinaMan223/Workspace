@@ -87,15 +87,11 @@ public class EventsCalendarList extends ListActivity {
 //        return super.onMenuItemSelected(featureId, item);
 //    }
     
-//    @Override
-//    protected void onListItemClick(ListView l, View v, int position, long id) {
-//        // set the current review to the Application (global state placed there)
-//        RestaurantFinderApplication application = (RestaurantFinderApplication) getApplication();
-//        application.setCurrentEvent(this.reviews.get(position));
-//
-//        // startFrom page is not stored in application, for example purposes it's a simple "extra"
-//        Intent intent = new Intent(Constants.INTENT_ACTION_VIEW_DETAIL);
-//        intent.putExtra(Constants.STARTFROM_EXTRA, getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 1));
-//        startActivity(intent);
-//    }
+    @Override
+  	protected void onListItemClick(ListView l, View v, int position, long id) {
+    	Intent intent = new Intent(Constants.INTENT_ACTION_EVENT_CAL_DETAIL);
+      intent.putExtras(event.get((int)id).toBundle());
+      startActivity(intent);
+    	
+    }
 }

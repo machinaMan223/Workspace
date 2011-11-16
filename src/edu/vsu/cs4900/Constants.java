@@ -7,6 +7,7 @@ public class Constants {
 	
 	public static final String INTENT_ACTION_PRODUCT_DETAIL = "edu.vsu.cs4900.PRODUCT_DETAIL";
 	public static final String INTENT_ACTION_NEW_PRODUCT = "edu.vsu.cs4900.NEW_PRODUCT";
+	public static final String INTENT_ACTION_EVENT_CAL_DETAIL = "edu.vsu.cs4900.EC_DETAIL";
 	
 	public static final String CATALOG_XML_FILE_NAME = "catalog.xml";
 	public static final String USERS_XML_FILE_NAME = "users.xml";

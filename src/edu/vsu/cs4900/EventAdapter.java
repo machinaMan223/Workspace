@@ -91,16 +91,15 @@ public class EventAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		EventEntry re = this.event.get(position);
-        return new EventListView(this.context, re.get_name(), re.get_address(), re.get_start_at());
+        return new EventListView(this.context, re.get_name(), re.get_start_at());
 	}
 	
 	private final class EventListView extends LinearLayout {
 
         private TextView name;
-        private TextView address;
         private TextView start_at;
 
-        public EventListView(Context context, String name, String address, String start_at) {
+        public EventListView(Context context, String name, String startAt) {
 
             super(context);
             setOrientation(LinearLayout.VERTICAL);
@@ -115,11 +114,11 @@ public class EventAdapter extends BaseAdapter {
             this.name.setTextColor(Color.WHITE);
             this.addView(this.name, params);
 
-            this.address = new TextView(context);
-            this.address.setText(address);
-            this.address.setTextSize(8f);
-            this.address.setTextColor(Color.GRAY);
-            this.addView(this.address, params);
+            this.start_at = new TextView(context);
+            this.start_at.setText(startAt);
+            this.start_at.setTextSize(8f);
+            this.start_at.setTextColor(Color.GRAY);
+            this.addView(this.start_at, params);
         }
     }
 

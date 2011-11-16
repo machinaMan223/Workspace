@@ -119,11 +119,11 @@ public class EventListHandler extends DefaultHandler {
             this._event.set_name(this.sb.toString());
             return;
         }
-        if (localName.equals("start_at")) {
+        if (localName.equals("start-at")) {
             this._event.set_start_at(this.sb.toString());
             return;
         }
-        if (localName.equals("end_at")) {
+        if (localName.equals("end-at")) {
             this._event.set_end_at(this.sb.toString());
             return;
         }

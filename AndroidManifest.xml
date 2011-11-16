@@ -83,5 +83,12 @@
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 		</activity>
+		
+		<activity android:name=".EventDesc" android:label="@string/ec_desc">
+			<intent-filter>
+				<action android:name="edu.vsu.cs4900.EC_DETAIL" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
     </application>
 </manifest>
