@@ -20,4 +20,9 @@
 	<string name="product_new_button_label">New</string>
 	<string name="new_product">ACM Android App - New Product</string>
 	<string name="ec_desc">ACM Android App - Event Description</string>
+	<string name="menu_map_view">Map View</string>
+	<string name="alert_label">Sorry!</string>
+
+	<string name="location_not_supplied_message">Location must be specified \n(City, State [Country]).</string>
+	<string name="no_location_message">No location is available to map for this review.</string>
 </resources>

@@ -2,11 +2,20 @@ package edu.vsu.cs4900;
 
 import edu.vsu.cs4900.data.EventEntry;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class EventDesc extends Activity {
 	private static final String CLASSTAG = EventDesc.class.getSimpleName();
+	private static final int MENU_MAP_REVIEW = Menu.FIRST;
 	
 	private TextView tvName;
 	private TextView tvStart;
@@ -43,4 +52,34 @@ public class EventDesc extends Activity {
 		tvDesc.setText(event.get_description());
 		tvDesc.setTextSize(10f);
 	}
+	
+	@Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+      super.onCreateOptionsMenu(menu);
+      menu.add(0, EventDesc.MENU_MAP_REVIEW, 0, R.string.menu_map_view).setIcon(
+          android.R.drawable.ic_menu_mapmode);
+      return true;
+  }
+	
+	@Override
+  public boolean onMenuItemSelected(int featureId, MenuItem item) {
+      Intent intent = null;
+      switch (item.getItemId()) {
+          case MENU_MAP_REVIEW:
+              Log.v(Constants.LOGTAG, " " + EventDesc.CLASSTAG + " MAP ");
+              if ((this.event.get_address() != null) && !this.event.get_address().equals("")) {
+                  intent = new Intent(Intent.ACTION_VIEW, Uri
+                      .parse("geo:0,0?q=" + this.event.get_address().toString()));
+                  startActivity(intent);
+              } else {
+                  new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.alert_label)).setMessage(
+                      R.string.no_location_message).setPositiveButton("Continue", new OnClickListener() {
+                      public void onClick(final DialogInterface dialog, final int arg1) {
+                      }
+                  }).show();
+              }
+              return true;
+      }
+      return super.onMenuItemSelected(featureId, item);
+  }
 }
