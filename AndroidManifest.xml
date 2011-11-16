@@ -69,5 +69,12 @@
         		<category android:name="android.intent.category.DEFAULT" />
         	</intent-filter>
         </activity>
+        
+        <activity android:name=".Product" android:label="@string/product">
+			<intent-filter>
+				<action android:name="edu.vsu.cs4900.PRODUCT_DETAIL" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
     </application>
 </manifest>

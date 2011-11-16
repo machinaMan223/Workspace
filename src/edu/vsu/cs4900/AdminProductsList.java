@@ -7,6 +7,7 @@ import edu.vsu.cs4900.data.CatalogList;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -63,5 +64,9 @@ private static final String CLASSTAG = AdminProductsList.class.getSimpleName();
 		// intent.putExtra(Constants.STARTFROM_EXTRA,
 		// getIntent().getIntExtra(Constants.STARTFROM_EXTRA, 1));
 		// startActivity(intent);
+		
+		Intent intent = new Intent(Constants.INTENT_ACTION_PRODUCT_DETAIL);
+    intent.putExtras(catalog.get((int)id).toBundle());
+    startActivity(intent);
 	}
 }

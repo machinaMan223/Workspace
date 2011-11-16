@@ -9,4 +9,7 @@
     <string name="app_name_admin_events">ACM Android App - Administration - Events</string>
     <string name="app_name_admin_products">ACM Android App - Administration - Products</string>
     <string name="app_name_admin_orders">ACM Android App - Administration - Orders</string>
+    <string name="menu_product_delete">Delete</string>
+    <string name="menu_product_create">New Product</string>
+    <string name="product">ACM Android App - Products</string>
 </resources>

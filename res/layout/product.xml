@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content">
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:gravity="center_horizontal" android:padding="10px"
+	>
+	
+	<TextView android:id="@+id/product_title_label"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+		style="theme" android:text="Title" />
+		
+	<EditText android:id="@+id/product_title"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/product_title_label"
+		android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+		style="theme" />	
+		
+	<TextView android:id="@+id/product_description_label"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/product_title"
+		android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+		style="theme" android:text="Description" />
+		
+	<EditText android:id="@+id/product_description"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/product_description_label"
+		android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+		style="theme" />	
+		
+	<TextView android:id="@+id/product_price_label"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/product_description"
+		android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+		style="theme" android:text="Price" />
+		
+	<EditText android:id="@+id/product_price"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/product_price_label"
+		android:layout_marginLeft="10px" android:layout_marginBottom="20px"
+		style="theme" />	
+
+    <Button android:id="@+id/product_update_button"  
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"      
+        android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+        android:layout_below="@id/product_price"
+        android:text="Update" />
+        
+    <Button android:id="@+id/product_cancel_button"  
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"      
+        android:layout_marginLeft="10px" android:layout_marginBottom="5px"
+        android:layout_below="@id/product_price" android:layout_toRightOf="@id/product_update_button"
+        android:text="Cancel" />
+</RelativeLayout>
+</ScrollView>

@@ -39,11 +39,11 @@ public class CatalogList {
 		return this._cataloglist;
 	}
 
-	int getCatalogEntryCount() {
+	public int getCatalogEntryCount() {
 		return this._cataloglist.size();
 	}
 
-	void replace(CatalogEntry newCatalogEntry) {
+	public void replace(CatalogEntry newCatalogEntry) {
 		try {
 			CatalogList newlist = new CatalogList(this._context);
 			for (int i = 0; i < getCatalogEntryCount(); i++) {
@@ -61,6 +61,49 @@ public class CatalogList {
 			persist();
 		}
 		catch (Exception e) {
+
+		}
+	}
+	
+	public void delete(CatalogEntry catalogEntry) {
+		try {
+			CatalogList newlist = new CatalogList(this._context);
+			for (int i = 0; i < getCatalogEntryCount(); i++) {
+				CatalogEntry ce = getCatalogEntry(i);
+				if (ce.get_product_id().equals(catalogEntry.get_product_id())) {
+					Log.d(Constants.LOGTAG, " " + CatalogList.CLASSTAG
+							+ "Deleting CatalogEntry");
+
+				} else {
+					newlist.addCatalogEntry(ce);
+				}
+			}
+			this._cataloglist = newlist._cataloglist;
+			persist();
+		} catch (Exception e) {
+
+		}
+	}
+	
+//Under the online mode, the product id is created on the server not on the client.
+	// This method needs to be updated accordingly later...
+	public void create(CatalogEntry catalogEntry) {
+		try {
+			int max_id = 0;
+			CatalogList newlist = new CatalogList(this._context);
+			for (int i = 0; i < getCatalogEntryCount(); i++) {
+				CatalogEntry ce = getCatalogEntry(i);
+				if (Integer.parseInt(ce.get_product_id()) > max_id)
+					max_id = Integer.parseInt(ce.get_product_id());
+
+				newlist.addCatalogEntry(ce);
+			}
+			catalogEntry.set_product_id(new Integer(max_id + 1).toString());
+			newlist.addCatalogEntry(catalogEntry);
+			
+			this._cataloglist = newlist._cataloglist;
+			persist();
+		} catch (Exception e) {
 
 		}
 	}
