@@ -12,4 +12,11 @@
     <string name="menu_product_delete">Delete</string>
     <string name="menu_product_create">New Product</string>
     <string name="product">ACM Android App - Products</string>
+    <string name="product_title_label">Title</string>
+	<string name="product_description_label">Description</string>
+	<string name="product_price_label">Price</string>
+	<string name="product_update_button_label">Update</string>
+	<string name="product_cancel_button_label">Cancel</string>
+	<string name="product_new_button_label">New</string>
+	<string name="new_product">ACM Android App - New Product</string>
 </resources>

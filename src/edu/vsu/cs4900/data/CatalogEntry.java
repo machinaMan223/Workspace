@@ -8,7 +8,7 @@ public class CatalogEntry {
 	private String _description = "";
 	private String _price = "";
 
-	CatalogEntry() {
+	public CatalogEntry() {
 		// Empty
 	}
 

@@ -10,12 +10,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class AdminProductsList extends ListActivity {
-private static final String CLASSTAG = AdminProductsList.class.getSimpleName();
+	private static final String CLASSTAG = AdminProductsList.class.getSimpleName();
+	private static final int MENU_CREATE = Menu.FIRST;
 	
 	private TextView empty;
 	private ProgressDialog progressDialog;
@@ -49,6 +52,32 @@ private static final String CLASSTAG = AdminProductsList.class.getSimpleName();
 																																					// by
 																																					// title
 		setListAdapter(catalogAdapter);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		menu.add(0, AdminProductsList.MENU_CREATE, 0, R.string.menu_product_create)
+				.setIcon(android.R.drawable.ic_menu_add);
+		return true;
+	}
+
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		switch (item.getItemId()) {
+			case MENU_CREATE:
+			try {
+				// Perform action on click
+				Intent intent = new Intent(
+						Constants.INTENT_ACTION_NEW_PRODUCT);
+				startActivity(intent);
+			} catch (Exception e) {
+				Log.i(Constants.LOGTAG + ": " + AdminProductsList.CLASSTAG,
+						"Failed to create a new product [" + e.getMessage() + "]");
+			}
+			return true;
+		}
+		return super.onMenuItemSelected(featureId, item);
 	}
 	
 	@Override

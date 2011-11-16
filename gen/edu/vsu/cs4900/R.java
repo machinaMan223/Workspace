@@ -23,11 +23,12 @@ public final class R {
         public static final int product_cancel_button=0x7f050010;
         public static final int product_description=0x7f05000c;
         public static final int product_description_label=0x7f05000b;
+        public static final int product_new_button=0x7f05000f;
         public static final int product_price=0x7f05000e;
         public static final int product_price_label=0x7f05000d;
         public static final int product_title=0x7f05000a;
         public static final int product_title_label=0x7f050009;
-        public static final int product_update_button=0x7f05000f;
+        public static final int product_update_button=0x7f050011;
         public static final int products_button=0x7f050002;
         public static final int roster_button=0x7f050006;
         public static final int users_button=0x7f050001;
@@ -43,7 +44,8 @@ public final class R {
         public static final int acm_orders_list=0x7f030007;
         public static final int acm_roster_list=0x7f030008;
         public static final int acm_store=0x7f030009;
-        public static final int product=0x7f03000a;
+        public static final int new_product=0x7f03000a;
+        public static final int product=0x7f03000b;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
@@ -57,6 +59,13 @@ public final class R {
         public static final int app_name_roster=0x7f040002;
         public static final int menu_product_create=0x7f04000a;
         public static final int menu_product_delete=0x7f040009;
+        public static final int new_product=0x7f040012;
         public static final int product=0x7f04000b;
+        public static final int product_cancel_button_label=0x7f040010;
+        public static final int product_description_label=0x7f04000d;
+        public static final int product_new_button_label=0x7f040011;
+        public static final int product_price_label=0x7f04000e;
+        public static final int product_title_label=0x7f04000c;
+        public static final int product_update_button_label=0x7f04000f;
     }
 }
